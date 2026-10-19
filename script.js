@@ -44,4 +44,18 @@
             e.currentTarget.appendChild(dragged);
         }
     })
+
+    document.getElementById("ex3_one")?.addEventListener("dragover", (e) => {
+        e.preventDefault();
+    })
+
+    document.getElementById("ex3_one")?.addEventListener("drop", (e) => {
+        e.preventDefault();
+        const id = e.dataTransfer.getData("text/plain");
+        const dragged = document.getElementById(id);
+
+        if(dragged) {
+            e.currentTarget.appendChild(dragged);
+        }
+    })
 })();
